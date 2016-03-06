@@ -6,7 +6,8 @@
 
               ; views
               [lepiane.home :as home]
-              [lepiane.contacts :as contacts]))
+              [lepiane.contacts :as contacts]
+              [lepiane.map :as map]))
 
 ;; -------------------------
 ;; Main page
@@ -19,7 +20,7 @@
          :class "navbar"}
    [:a {:href "/"} "Home"]
    "|"
-   [:a {:href "#"} "Dove siamo"]
+   [:a {:href "/map"} "Dove siamo"]
    "|"
    [:a {:href "/contacts"} "Contattaci"]])
 
@@ -64,6 +65,9 @@
 
 (secretary/defroute "/contacts" []
   (session/put! :current-page #'contacts/contacts-page))
+
+(secretary/defroute "/map" []
+  (session/put! :current-page #'map/map-page))
 
 ;; -------------------------
 ;; Initialize app
