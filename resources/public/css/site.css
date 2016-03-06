@@ -4,6 +4,24 @@ body {
   font-family: 'Dancing Script', cursive;
 }
 
+a {
+  color: #024b8a;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Oswald', sans-serif;
+}
+
+.navbar {
+  font-family: 'Oswald', sans-serif;
+}
+
+.navbar a {
+  color: white;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
 div.background {
   position: fixed;
 }
@@ -28,6 +46,16 @@ img.background {
     bottom: 0px;
     top: auto;
   }
+
+  img.houses {
+    width: 60px;
+    height: 50px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
 }
 
 @media (min-width: 700px) {
@@ -40,6 +68,16 @@ img.background {
   img.background {
     width: 500px;
   }
+
+  img.houses {
+    width: 120px;
+    height: 100px;
+  }
+
+  h1 {
+    font-size: 70px;
+  }
+
 }
 
 .rounded {

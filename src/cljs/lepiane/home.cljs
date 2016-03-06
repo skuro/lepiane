@@ -15,13 +15,10 @@
   [:div {:style {:text-align "center"
                  :display "inline-block"}}
    [:a {:href link}
-    [:img {:class "rounded"
+    [:img {:class "rounded houses"
             :src pic
-            :style {:width "120px"
-                    :height "100px"
-                    :margin-bottom "5px"
-                    :float "left"}}]
-    [:p {:style {:font-size "1.2em"}}
+            :style {:margin-bottom "5px"}}]
+    [:p {:style {:font-size "1.3em"}}
      label]]])
 
 (defn houses [houses-data]
@@ -38,26 +35,4 @@
 
 (defn home-page []
   [:div
-   [:div {:class "container logo"
-          :style {:text-align "center"
-                  :margin-top "25px"}}
-    [:img {:src "/img/logo.png"
-           :style {:text-align "center"
-                   :width "100"}}]]
-   [:div {:class "row"
-          :style {:text-align "center"
-                  :margin-top "-25px"}}
-    [:div {:class "col-lg-8 col-lg-offset-2"}
-     [:h1 {:style {:font-size "70px"
-                   :font-family "Oswald, sans-serif"
-                   :font-weight 300}}
-      "Case vacanze alle Piane"]
-     [:h3 {:style {:font-size "30px"
-                   :font-family "Oswald, sans-serif"
-                   :font-weight 100
-                   :margin-top "-35px"
-                   :margin-bottom "25px"}}
-      "Mare e relax a Calasetta"]]]
-   [:div {:class "row"}
-    [:div {:class "col-lg-8 col-lg-offset-2 row-fluid"}
-     (houses house-data)]]])
+   (houses house-data)])

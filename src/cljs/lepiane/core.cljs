@@ -4,18 +4,54 @@
               [secretary.core :as secretary :include-macros true]
               [accountant.core :as accountant]
 
-              ;pages
-              [lepiane.home :as home]))
+              ; views
+              [lepiane.home :as home]
+              [lepiane.contacts :as contacts]))
 
 ;; -------------------------
-;; Views
+;; Main page
 
-(defn about-page []
-  [:div [:h2 "About lepiane"]
-   [:div [:a {:href "/"} "go to the home page"]]])
+(defn navbar []
+  [:div {:style {:text-align "center"
+                 :margin-top "20px"
+                 :margin-bottom "-60px"
+                 :z-index 100}
+         :class "navbar"}
+   [:a {:href "/"} "Home"]
+   "|"
+   [:a {:href "#"} "Dove siamo"]
+   "|"
+   [:a {:href "/contacts"} "Contattaci"]])
+
+(defn title []
+  [:div
+   [:div {:class "container logo"
+          :style {:text-align "center"
+                  :margin-top "25px"}}]
+   [:div {:class "row"
+          :style {:text-align "center"
+                  :margin-top "-25px"}}
+    [:div {:class "col-lg-8 col-lg-offset-2"}
+     [:h1 {:style {:font-family "Oswald, sans-serif"
+                   :font-weight 300}}
+      [:img {:src "/img/logo.png"
+             :style {:text-align "center"
+                     :width "100"
+                     :margin-right "50px"}}][:span "Case vacanze alle Piane"]]
+     [:h3 {:style {:font-size "30px"
+                   :font-family "Oswald, sans-serif"
+                   :font-weight 100
+                   :margin-top "-35px"
+                   :margin-bottom "70px"}}
+      "Mare e relax a Calasetta"]]]])
 
 (defn current-page []
-  [:div [(session/get :current-page)]
+  [:div
+   (navbar)
+   (title)
+   [:div {:class "row"}
+    [:div {:class "col-lg-8 col-lg-offset-2 row-fluid"}
+     [(session/get :current-page)]]]
    [:div {:class "background"}
     [:img {:src "/img/sardegna.png"
            :class "background"}]]])
@@ -26,8 +62,8 @@
 (secretary/defroute "/" []
   (session/put! :current-page #'home/home-page))
 
-(secretary/defroute "/about" []
-  (session/put! :current-page #'about-page))
+(secretary/defroute "/contacts" []
+  (session/put! :current-page #'contacts/contacts-page))
 
 ;; -------------------------
 ;; Initialize app
