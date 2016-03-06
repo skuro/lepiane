@@ -1,34 +1,49 @@
 body {
-  font-family: 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif;
-  max-width: 600px;
-  margin: 0 auto;
-  padding-top: 72px;
-  -webkit-font-smoothing: antialiased;
-  font-size: 1.125em;
-  color: #333;
-  line-height: 1.5em;
+  background-color: #b2d0ff;
+  overflow: "hidden";
+  font-family: 'Dancing Script', cursive;
 }
 
-h1, h2, h3 {
-  color: #000;
-}
-h1 {
-  font-size: 2.5em
+div.background {
+  position: fixed;
 }
 
-h2 {
-  font-size: 2em
+img.background {
+  opacity: 100%;
+  -moz-transition: opacity 2s; /* Firefox 4 */
+  -webkit-transition: opacity 2s; /* Safari and Chrome */
+  -o-transition: opacity 2s;
+  transition: opacity 2s;
 }
 
-h3 {
-  font-size: 1.5em
+@media (max-width: 700px) {
+  div.background {
+    z-index: -10;
+    bottom: 0px;
+    right: 0px;
+  }
+
+  img.background {
+    width: 200px;
+    bottom: 0px;
+    top: auto;
+  }
 }
 
-a {
-  text-decoration: none;
-  color: #09f;
+@media (min-width: 700px) {
+  div.background {
+    z-index: -10;
+    top: 0px;
+    right: 0px;
+  }
+
+  img.background {
+    width: 500px;
+  }
 }
 
-a:hover {
-  text-decoration: underline;
+.rounded {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }

@@ -5,6 +5,13 @@
             [lepiane.middleware :refer [wrap-middleware]]
             [environ.core :refer [env]]))
 
+(def ie-support
+  "<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js'></script>
+      <script src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js'></script>
+    <![endif]-->")
+
 (def mount-target
   [:div#app
       [:h3 "ClojureScript has not been compiled!"]
@@ -18,9 +25,18 @@
      [:meta {:charset "utf-8"}]
      [:meta {:name "viewport"
              :content "width=device-width, initial-scale=1"}]
-     (include-css (if (env :dev) "/css/site.css" "/css/site.min.css"))]
+    (include-css "/css/bootstrap.min.css")
+    (include-css "/css/font-awesome.min.css")
+    (include-css "//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css")
+    (include-css "//fonts.googleapis.com/css?family=Oswald:400,300,700")
+    (include-css "//fonts.googleapis.com/css?family=Dancing+Script:700")
+    (include-css (if (env :dev) "/css/site.css" "/css/site.min.css"))
+    ie-support]
     [:body
      mount-target
+     (include-js "//code.jquery.com/jquery-1.10.2.min.js")
+     (include-js "/js/bootstrap.min.js")
+     (include-js "/js/jquery.backstretch.min.js")
      (include-js "/js/app.js")]))
 
 (def cards-page
