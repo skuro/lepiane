@@ -1,7 +1,7 @@
 (ns lepiane.home)
 
 (def house-data
-  [{:pic "img/monolocale.png"
+  [{:pic "img/padronale.png"
     :label "Casa padronale"
     :link "#"}
    {:pic "img/monolocale.png"
