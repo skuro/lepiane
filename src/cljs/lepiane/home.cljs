@@ -11,7 +11,18 @@
     :label "Bilocale"
     :link "#"}])
 
-(defn house [{:keys [pic label link]}]
+(def service-data
+  [{:pic "img/piscina.png"
+    :label "Piscina"
+    :link "#"}
+   {:pic "img/padronale.png"
+    :label "Auto"
+    :link "#"}
+   {:pic "img/padronale.png"
+    :label "Trasporto"
+    :link "#"}])
+
+(defn block [{:keys [pic label link]}]
   [:div {:style {:text-align "center"
                  :display "inline-block"}}
    [:a {:href link}
@@ -21,20 +32,30 @@
     [:p {:style {:font-size "1.3em"}}
      label]]])
 
-(defn houses [houses-data]
-  [:div {:style {:margin-top "25px"
+(defn houses [houses-data services-data]
+  [:div {:style {:margin-top "-50px"
                  :margin-left "14%"}}
-   [:h3 {:style {:margin-bottom "50px"}}
+   [:h3 {:style {:margin-bottom "10px"}}
     "Le nostre case:"]
    [:div {:style {:display "inline-block"}}
-    (house (first houses-data))]
+    (block (first houses-data))]
    (for [house-data (rest houses-data)]
      [:div {:key (str (gensym) "-" (:label house-data))
             :style {:display "inline-block"
                     :width "33%"
                     :float "right"}}
-      (house house-data)])])
+      (block house-data)])
+   [:h3 {:style {:margin-bottom "10px"}}
+    "I nostri servizi:"]
+   [:div {:style {:display "inline-block"}}
+    (block (first services-data))]
+   (for [service-data (rest services-data)]
+     [:div {:key (str (gensym) "-" (:label service-data))
+            :style {:display "inline-block"
+                    :width "33%"
+                    :float "right"}}
+      (block service-data)])])
 
 (defn home-page []
   [:div
-   (houses house-data)])
+   (houses house-data service-data)])
