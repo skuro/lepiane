@@ -56,6 +56,11 @@ img.background {
     font-size: 50px;
   }
 
+  img.logo {
+    width: 50px;
+    margin-right: 25px;
+  }
+
 }
 
 @media (min-width: 700px) {
@@ -76,6 +81,11 @@ img.background {
 
   h1 {
     font-size: 70px;
+  }
+
+  img.logo {
+    width: 100px;
+    margin-right: 50px;
   }
 
 }

@@ -35,8 +35,8 @@
      [:h1 {:style {:font-family "Oswald, sans-serif"
                    :font-weight 300}}
       [:img {:src "/img/logo.png"
+             :class "logo"
              :style {:text-align "center"
-                     :width "100"
                      :margin-right "50px"}}][:span "Case vacanze alle Piane"]]
      [:h3 {:style {:font-size "30px"
                    :font-family "Oswald, sans-serif"
