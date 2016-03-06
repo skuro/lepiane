@@ -24,6 +24,8 @@
 (defn houses [houses-data]
   [:div {:style {:margin-top "25px"
                  :margin-left "14%"}}
+   [:h3 {:style {:margin-bottom "50px"}}
+    "Le nostre case:"]
    [:div {:style {:display "inline-block"}}
     (house (first houses-data))]
    (for [house-data (rest houses-data)]

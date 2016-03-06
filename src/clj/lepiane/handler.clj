@@ -49,8 +49,8 @@
 
 (defroutes routes
   (GET "/" [] loading-page)
-  (GET "/about" [] loading-page)
-  (GET "/cards" [] cards-page)
+  (GET "/map" [] loading-page)
+  (GET "/contacts" [] loading-page)
   (resources "/")
   (not-found "Not Found"))
 
