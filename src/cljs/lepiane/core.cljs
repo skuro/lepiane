@@ -42,7 +42,7 @@
      [:h3 {:style {:font-size "30px"
                    :font-family "Oswald, sans-serif"
                    :font-weight 100
-                   :margin-top "-60px"
+                   :margin-top "-40px"
                    :margin-bottom "70px"}}
       "Mare e relax a Calasetta"]]]])
 

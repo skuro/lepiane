@@ -38,7 +38,7 @@ img.background {
   div.background {
     z-index: -10;
     bottom: 0px;
-    right: -80px;
+    right: 0px;
   }
 
   img.background {
@@ -61,13 +61,18 @@ img.background {
     margin-right: 25px;
   }
 
+  iframe {
+    width: 300px;
+    height: 225px;
+  }
+
 }
 
 @media (min-width: 700px) {
   div.background {
     z-index: -10;
-    top: 0px;
-    right: -80px;
+    top: 10px;
+    right: -10px;
   }
 
   img.background {
@@ -86,6 +91,11 @@ img.background {
   img.logo {
     width: 100px;
     margin-right: 50px;
+  }
+
+  iframe {
+    width: 600px;
+    height: 450px;
   }
 
 }
