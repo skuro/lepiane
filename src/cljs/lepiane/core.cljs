@@ -39,10 +39,8 @@
              :class "logo"
              :style {:text-align "center"
                      :margin-right "50px"}}][:span "Case vacanze alle Piane"]]
-     [:h3 {:style {:font-size "30px"
-                   :font-family "Oswald, sans-serif"
+     [:h3 {:style {:font-family "Oswald, sans-serif"
                    :font-weight 100
-                   :margin-top "-40px"
                    :margin-bottom "70px"}}
       "Mare e relax a Calasetta"]]]])
 

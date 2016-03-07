@@ -2,7 +2,7 @@
 
 (def house-data
   [{:pic "img/padronale.png"
-    :label "Casa padronale"
+    :label "Principale"
     :link "#"}
    {:pic "img/monolocale.png"
     :label "Monolocale"
@@ -35,7 +35,8 @@
 (defn houses [houses-data services-data]
   [:div {:style {:margin-top "-50px"
                  :margin-left "14%"}}
-   [:h3 {:style {:margin-bottom "10px"}}
+   [:h3 {:style {:margin-bottom "10px"
+                 :margin-top "20px"}}
     "Le nostre case:"]
    [:div {:style {:display "inline-block"}}
     (block (first houses-data))]
@@ -45,7 +46,8 @@
                     :width "33%"
                     :float "right"}}
       (block house-data)])
-   [:h3 {:style {:margin-bottom "10px"}}
+   [:h3 {:style {:margin-bottom "10px"
+                 :margin-top "20px"}}
     "I nostri servizi:"]
    [:div {:style {:display "inline-block"}}
     (block (first services-data))]
