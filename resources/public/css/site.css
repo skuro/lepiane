@@ -38,7 +38,7 @@ img.background {
   transition: opacity 2s;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   div.background {
     z-index: -10;
     bottom: 0px;
@@ -80,7 +80,7 @@ img.background {
 
 }
 
-@media (min-width: 700px) {
+@media (min-width: 801px) {
   div.background {
     z-index: -10;
     top: 10px;
