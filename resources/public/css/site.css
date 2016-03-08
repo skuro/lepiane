@@ -1,7 +1,8 @@
 body {
   background-color: #b2d0ff;
   overflow: "hidden";
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Oswald', sans-serif;
+  color: #333;
 }
 
 a {

@@ -7,7 +7,9 @@
               ; views
               [lepiane.home :as home]
               [lepiane.contacts :as contacts]
-              [lepiane.map :as map]))
+              [lepiane.map :as map]
+
+              [lepiane.houses.main :as hmain]))
 
 ;; -------------------------
 ;; Main page
@@ -66,6 +68,9 @@
 
 (secretary/defroute "/map" []
   (session/put! :current-page #'map/map-page))
+
+(secretary/defroute "/houses/main" []
+  (session/put! :current-page #'hmain/main-house-page))
 
 ;; -------------------------
 ;; Initialize app
