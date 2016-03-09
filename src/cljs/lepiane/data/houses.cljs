@@ -4,7 +4,14 @@
   [{:pic "/img/padronale.png"
     :label "Principale"
     :link "/houses/main"
-    :desc "Foobar"}
+    :desc [:span
+           [:h4 "Caratteristiche principali"]
+           [:ul
+            [:li "3 camere"]
+            [:li "2 bagni"]
+            [:li "ampio salone"]
+            [:li "camino"]
+            [:li "6 posti letto"]]]}
    {:pic "/img/monolocale.png"
     :label "Monolocale"
     :link "#"}

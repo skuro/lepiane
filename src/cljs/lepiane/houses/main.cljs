@@ -13,7 +13,7 @@
    [:div.row
     (spacer)
     [:div.col-xs-2
-     [:a {:href "#"} "< indietro"]]
+     [:a {:href "/"} "< indietro"]]
     [:div.col-xs-10 " "]]
    [:div.row
     (spacer)

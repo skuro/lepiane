@@ -51,6 +51,7 @@
   (GET "/" [] loading-page)
   (GET "/map" [] loading-page)
   (GET "/contacts" [] loading-page)
+  (GET "/houses/*" [] loading-page)
   (resources "/")
   (not-found "Not Found"))
 
