@@ -6,7 +6,7 @@
 (def house (first (filter #(= "Principale" (:label %)) h/house-data)))
 
 (defn spacer []
-  [:div.col-xs-2])
+  [:div.col-xs-1])
 
 (defn main-house-page []
   [:div.container
