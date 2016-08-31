@@ -22,6 +22,7 @@
                  :margin-bottom "-60px"
                  :z-index 100}
          :class "navbar"}
+   [lang/lang-switcher "en"]
    [:a {:href "/"} "Home"]
    "|"
    [:a {:href "/map"} "Dove siamo"]
