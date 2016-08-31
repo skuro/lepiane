@@ -1,0 +1,14 @@
+* Da fare
+** TODO Multilingua
+   - [ ] storaggio dati per lingua
+   - [ ] language switcher
+   - [ ] riconoscimento lingua dal browser
+   - [ ] contenuti in IT
+   - [ ] contenuti in EN
+   - [ ] contenuti in FR
+   - [ ] contenuti in DE
+** TODO Galleria foto per casa
+** TODO Rifinire sezione contatti
+   - [ ] aggiungere telefono e mail
+** TODO Aggiungere modalita' di pagamento e prenotazione
+** TODO Funzionalita' calendario per disponibilita' case
