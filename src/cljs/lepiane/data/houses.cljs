@@ -14,7 +14,7 @@
             [:li "6 posti letto"]]]}
    {:pic "/img/monolocale.png"
     :label "Monolocale"
-    :link "#"}
+    :link "/houses/monolocale"}
    {:pic "/img/bilocale.png"
     :label "Bilocale"
     :link "#"}])
