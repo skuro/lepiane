@@ -11,13 +11,13 @@
 (defn main-house-page []
   [:div.container
    [:div.row
-    (spacer)
+    [spacer]
     [:div.col-xs-2
      [:a {:href "/"} "< indietro"]]
     [:div.col-xs-10 " "]]
    [:div.row
-    (spacer)
+    [spacer]
     [:div.col-xs-2
-     (b/block house)]
-    [:div.col-xs-8
-     (d/description (:desc house))]]])
+     [b/block house]]
+    [:div.col-xs-6
+     [d/description (:desc house)]]]])

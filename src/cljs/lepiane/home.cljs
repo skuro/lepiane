@@ -1,17 +1,7 @@
 (ns lepiane.home
   (:require [lepiane.components.block :as block]
-            [lepiane.data.houses :as houses]))
-
-(def service-data
-  [{:pic "img/piscina.png"
-    :label "Piscina"
-    :link "#"}
-   {:pic "img/padronale.png"
-    :label "Auto"
-    :link "#"}
-   {:pic "img/padronale.png"
-    :label "Trasporto"
-    :link "#"}])
+            [lepiane.data.houses :as houses]
+            [lepiane.data.services :as services]))
 
 (defn houses [houses-data services-data]
   [:div {:style {:margin-top "-50px"
@@ -20,13 +10,13 @@
                  :margin-top "20px"}}
     "Le nostre case:"]
    [:div {:style {:display "inline-block"}}
-    (block/block (first houses-data))]
+    [block/block (first houses-data)]]
    (for [house-data (rest houses-data)]
      [:div {:key (str (gensym) "-" (:label house-data))
             :style {:display "inline-block"
                     :width "33%"
                     :float "right"}}
-      (block/block house-data)])
+      [block/block house-data]])
    [:h3 {:style {:margin-bottom "10px"
                  :margin-top "20px"}}
     "I nostri servizi:"]
@@ -41,4 +31,4 @@
 
 (defn home-page []
   [:div
-   (houses houses/house-data service-data)])
+   [houses houses/house-data services/service-data]])

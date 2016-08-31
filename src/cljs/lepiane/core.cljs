@@ -40,7 +40,7 @@
       [:img {:src "/img/logo.png"
              :class "logo"
              :style {:text-align "center"
-                     :margin-right "50px"}}][:span "Case vacanze alle Piane"]]
+                     :margin-right "50px"}}][:span "Case vacanze a Le Piane"]]
      [:h3 {:style {:font-family "Oswald, sans-serif"
                    :font-weight 100
                    :margin-bottom "70px"}}
