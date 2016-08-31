@@ -17,4 +17,4 @@
     :link "/houses/monolocale"}
    {:pic "/img/bilocale.png"
     :label "Bilocale"
-    :link "#"}])
+    :link "/houses/bilocale"}])

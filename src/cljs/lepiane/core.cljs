@@ -69,7 +69,7 @@
 (secretary/defroute "/map" []
   (session/put! :current-page #'map/map-page))
 
-(secretary/defroute "/houses/main" []
+(secretary/defroute "/houses/*" []
   (session/put! :current-page #'hmain/main-house-page))
 
 ;; -------------------------
