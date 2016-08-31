@@ -3,7 +3,8 @@
             [compojure.route :refer [not-found resources]]
             [hiccup.page :refer [include-js include-css html5]]
             [lepiane.middleware :refer [wrap-middleware]]
-            [environ.core :refer [env]]))
+            [environ.core :refer [env]]
+            [clojure.string :as s]))
 
 (def ie-support
   "<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -19,7 +20,29 @@
        [:b "lein figwheel"]
        " in order to start the compiler"]])
 
-(def loading-page
+(def default-language "en")
+
+(defn parse-language
+  [lang]
+  (if lang
+    (-> lang
+        (s/split #";")
+        (get 0)
+        (s/split #",")
+        (get 0 default-language)
+        (->> (take 2)
+             (apply str)))
+    default-language))
+
+(defn lang-detect
+  [req]
+  (let [lang-header (get-in req [:headers "accept-language"])
+        lang (parse-language lang-header)]
+    [:script {:id "__lang-detect"
+              :type "lepiane/language-detection"} lang]))
+
+(defn loading-page
+  [req]
   (html5
    [:head
      [:meta {:charset "utf-8"}]
@@ -37,7 +60,8 @@
      (include-js "//code.jquery.com/jquery-1.10.2.min.js")
      (include-js "/js/bootstrap.min.js")
      (include-js "/js/jquery.backstretch.min.js")
-     (include-js "/js/app.js")]))
+     (include-js "/js/app.js")
+     (lang-detect req)]))
 
 (def cards-page
   (html5

@@ -8,8 +8,10 @@
               [lepiane.home :as home]
               [lepiane.contacts :as contacts]
               [lepiane.map :as map]
+              [lepiane.houses.main :as hmain]
 
-              [lepiane.houses.main :as hmain]))
+              ; utils
+              [lepiane.data.lang :as lang]))
 
 ;; -------------------------
 ;; Main page
