@@ -3,7 +3,9 @@
 
             [lepiane.components.block :as b]
             [lepiane.components.desc :as d]
-            [lepiane.data.houses :as h]))
+            [lepiane.data.houses :as h]
+
+            [lepiane.data.lang :as lang]))
 
 (def house (atom nil))
 

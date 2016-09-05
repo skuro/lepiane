@@ -2,11 +2,11 @@
 
 (def service-data
   [{:pic "img/piscina.png"
-    :label "Piscina"
+    :label [:sections :services :pool :label]
     :link "#"}
    {:pic "img/padronale.png"
-    :label "Auto"
+    :label [:sections :services :rentals :label]
     :link "#"}
    {:pic "img/padronale.png"
-    :label "Trasporto"
+    :label [:sections :services :transport :label]
     :link "#"}])

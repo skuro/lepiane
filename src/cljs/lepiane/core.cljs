@@ -22,7 +22,8 @@
                  :margin-bottom "-60px"
                  :z-index 100}
          :class "navbar"}
-   [lang/lang-switcher "en"]
+   [lang/lang-switcher (name (or (:id @lang/current)
+                                 :en))]
    [:a {:href "/"} (lang/string [:navbar :home])]
    "|"
    [:a {:href "/map"} (lang/string [:navbar :where])]
@@ -43,11 +44,12 @@
       [:img {:src "/img/logo.png"
              :class "logo"
              :style {:text-align "center"
-                     :margin-right "50px"}}][:span "Case vacanze a Le Piane"]]
+                     :margin-right "50px"}}]
+      (lang/string [:title :main])]
      [:h3 {:style {:font-family "Oswald, sans-serif"
                    :font-weight 100
                    :margin-bottom "70px"}}
-      "Mare e relax a Calasetta"]]]])
+      (lang/string [:title :tagline])]]]])
 
 (defn current-page []
   [:div

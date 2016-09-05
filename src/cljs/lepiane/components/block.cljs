@@ -1,4 +1,5 @@
-(ns lepiane.components.block)
+(ns lepiane.components.block
+  (:require [lepiane.data.lang :as lang]))
 
 (defn block
   ([{:keys [pic label link]} callback]
@@ -13,6 +14,6 @@
             :style {:margin-bottom "5px"}}]
      [:p {:style {:font-size "1.1em"
                   :font-family "'Dancing Script', cursive"}}
-      label]]])
+      (lang/string label)]]])
   ([content]
    [block content #()]))

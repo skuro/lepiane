@@ -7,11 +7,16 @@
 (def default-lang "en")
 
 (def langs
-  {"en" :en
-   "it" :it
-   "de" :de
-   "fr" :fr
-   "nl" :nl})
+  {"en" {:id :en
+         :flag "🇬🇧"}
+   "it" {:id :it
+         :flag "🇮🇹"}
+   "de" {:id :de
+         :flag "🇩🇪"}
+   "fr" {:id :fr
+         :flag "🇫🇷"}
+   "nl" {:id :nl
+         :flag "🇳🇱"}})
 
 (def strings
   {:en en/strings
@@ -28,9 +33,9 @@
   (let [lang-script (.getElementById js/document "__lang-detect")]
     (script->lang lang-script)))
 
-(defn lang-map [lang]
-  {:lang lang
-   :strings (or (strings lang)
+(defn lang-map [{:keys [id]}]
+  {:lang id
+   :strings (or (strings id)
                 (strings :en))})
 
 (def current (atom (lang-map (detect-language))))
@@ -48,10 +53,14 @@
 
 (defn lang-switcher [selected-lang]
   [:select {:id "lang"
-            :on-change event->language}
-   (for [lang (keys langs)]
-     [:option {:id lang
-               :key (gensym)} lang])])
+            :defaultValue selected-lang
+            :on-change event->language
+            :style {:-moz-appearance "none"
+                    :-webkit-appearance "none"
+                    :padding "0px 3px"}}
+   (for [[label {:keys [id flag]}] langs]
+     [:option {:id id
+               :key (gensym)} flag " " label])])
 
 (defn string [path]
   (let [strings (:strings @current)]

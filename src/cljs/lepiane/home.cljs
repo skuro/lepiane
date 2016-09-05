@@ -2,7 +2,9 @@
   (:require [lepiane.components.block :as block]
             [lepiane.data.houses :as houses]
             [lepiane.houses.main :as house]
-            [lepiane.data.services :as services]))
+            [lepiane.data.services :as services]
+
+            [lepiane.data.lang :as lang]))
 
 (defn nav-house
   [house-data]
@@ -14,7 +16,7 @@
                  :margin-left "14%"}}
    [:h3 {:style {:margin-bottom "10px"
                  :margin-top "20px"}}
-    "Le nostre case:"]
+    (lang/string [:sections :houses :title]) ":"]
    [:div {:style {:display "inline-block"}}
     (let [house-data (first houses-data)]
       [block/block house-data (nav-house house-data)])]
@@ -26,7 +28,7 @@
       [block/block house-data (nav-house house-data)]])
    [:h3 {:style {:margin-bottom "10px"
                  :margin-top "20px"}}
-    "I nostri servizi:"]
+    (lang/string [:sections :services :title]) ":"]
    [:div {:style {:display "inline-block"}}
     [block/block (first services-data)]]
    (for [service-data (rest services-data)]
