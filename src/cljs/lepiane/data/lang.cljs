@@ -1,5 +1,8 @@
 (ns lepiane.data.lang
-  (:require [reagent.ratom :refer [atom]]))
+  (:require [reagent.ratom :refer [atom]]
+
+            [lepiane.data.lang.en :as en]
+            [lepiane.data.lang.it :as it]))
 
 (def default-lang "en")
 
@@ -9,6 +12,10 @@
    "de" :de
    "fr" :fr
    "nl" :nl})
+
+(def strings
+  {:en en/strings
+   :it it/strings})
 
 (defn script->lang
   [script]
@@ -21,18 +28,23 @@
   (let [lang-script (.getElementById js/document "__lang-detect")]
     (script->lang lang-script)))
 
-(def current (atom (detect-language)))
+(defn lang-map [lang]
+  {:lang lang
+   :strings (or (strings lang)
+                (strings :en))})
+
+(def current (atom (lang-map (detect-language))))
 
 (defn switch-language
   [lang]
-  (reset! current (langs lang :en)))
+  (when-let [l (langs lang :en)]
+    (reset! current (lang-map l))))
 
 (defn event->language [ev]
   (let [select-box (.. ev -target)
         selected (aget (.-selectedOptions select-box) 0)]
     (when selected
-      (.log js/console "storing" (.. selected -id))
-      (reset! current (.. selected -id)))))
+      (switch-language (.. selected -id)))))
 
 (defn lang-switcher [selected-lang]
   [:select {:id "lang"
@@ -40,3 +52,7 @@
    (for [lang (keys langs)]
      [:option {:id lang
                :key (gensym)} lang])])
+
+(defn string [path]
+  (let [strings (:strings @current)]
+    (get-in strings path)))

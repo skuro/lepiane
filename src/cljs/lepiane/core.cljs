@@ -23,11 +23,11 @@
                  :z-index 100}
          :class "navbar"}
    [lang/lang-switcher "en"]
-   [:a {:href "/"} "Home"]
+   [:a {:href "/"} (lang/string [:navbar :home])]
    "|"
-   [:a {:href "/map"} "Dove siamo"]
+   [:a {:href "/map"} (lang/string [:navbar :where])]
    "|"
-   [:a {:href "/contacts"} "Contattaci"]])
+   [:a {:href "/contacts"} (lang/string [:navbar :contacts])]])
 
 (defn title []
   [:div
