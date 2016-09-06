@@ -13,4 +13,5 @@
               :services {:title "Our services"
                          :pool {:label "Swimming pool"}
                          :transport {:label "Transport"}
-                         :rentals {:label "Rentals"}}}})
+                         :rentals {:label "Rentals"}}
+              :details {:house {:details "Main features"}}}})

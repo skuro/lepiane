@@ -57,11 +57,11 @@
     ie-support]
     [:body
      mount-target
+     (lang-detect req)
      (include-js "//code.jquery.com/jquery-1.10.2.min.js")
      (include-js "/js/bootstrap.min.js")
      (include-js "/js/jquery.backstretch.min.js")
-     (include-js "/js/app.js")
-     (lang-detect req)]))
+     (include-js "/js/app.js")]))
 
 (def cards-page
   (html5

@@ -22,7 +22,7 @@
                  :margin-bottom "-60px"
                  :z-index 100}
          :class "navbar"}
-   [lang/lang-switcher (name (or (:id @lang/current)
+   [lang/lang-switcher (name (or (:lang @lang/current)
                                  :en))]
    [:a {:href "/"} (lang/string [:navbar :home])]
    "|"

@@ -24,8 +24,9 @@
 
 (defn script->lang
   [script]
+  (.log js/console "script is:" (.-text script))
   (if script
-    (get langs script "en")
+    (get langs (.-text script) "en")
     default-lang))
 
 (defn detect-language
@@ -52,6 +53,7 @@
       (switch-language (.. selected -id)))))
 
 (defn lang-switcher [selected-lang]
+  (.log js/console "selected lang is:" selected-lang)
   [:select {:id "lang"
             :defaultValue selected-lang
             :on-change event->language
@@ -60,6 +62,7 @@
                     :padding "0px 3px"}}
    (for [[label {:keys [id flag]}] langs]
      [:option {:id id
+               :value id
                :key (gensym)} flag " " label])])
 
 (defn string [path]
