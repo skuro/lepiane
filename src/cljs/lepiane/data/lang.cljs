@@ -44,7 +44,8 @@
 (defn switch-language
   [lang]
   (when-let [l (langs lang :en)]
-    (reset! current (lang-map l))))
+    (reset! current (lang-map l))
+    @current))
 
 (defn event->language [ev]
   (let [select-box (.. ev -target)
@@ -53,7 +54,6 @@
       (switch-language (.. selected -id)))))
 
 (defn lang-switcher [selected-lang]
-  (.log js/console "selected lang is:" selected-lang)
   [:select {:id "lang"
             :defaultValue selected-lang
             :on-change event->language
