@@ -16,4 +16,8 @@
                          :transport {:label "Transport"}
                          :rentals {:label "Rentals"}}
               :house-details {:title "Main features"
-                              :toilets "toilets"}}})
+                              :toilets "toilets"
+                              :pax {:start "up to n."
+                                    :end "guests"
+                                    :children-start "(plus n."
+                                    :children-end "small children)"}}}})

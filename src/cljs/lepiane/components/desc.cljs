@@ -1,19 +1,24 @@
 (ns lepiane.components.desc
   (:require [lepiane.data.lang :as lang]))
 
+(defn list-char
+  [char]
+  [:span {:style {:font-size "2em"}}
+   char " "])
+
 (defn size
   [{:keys [size]}]
-  [:li "∅ " size "m" [:sup "2"]])
+  [:li [list-char "∅"] size "m" [:sup "2"]])
 
 (defn toilets
   [{:keys [toilets]}]
-  [:li "⚤ " toilets " " (lang/string [:sections :house-details :toilets])])
+  [:li [list-char "⚤"] toilets " " (lang/string [:sections :house-details :toilets])])
 
 (defn pax
   [{:keys [pax]}]
-  [:li "☻ up to n. " (:adults pax) " guests"
+  [:li [list-char "☺"] (lang/string [:sections :house-details :pax :start]) " " (:adults pax) " " (lang/string [:sections :house-details :pax :end])
    (if-let [children (:children pax)]
-     [:span " (plus n. " children " small children)"])])
+     [:span " " (lang/string [:sections :house-details :pax :children-start]) children " " (lang/string [:sections :house-details :pax :children-end])])])
 
 (defn description [desc]
   [:div.container-fluid

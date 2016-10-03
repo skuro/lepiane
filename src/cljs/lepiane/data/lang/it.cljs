@@ -16,4 +16,8 @@
                          :transport {:label "Trasporto"}
                          :rentals {:label "Noleggio"}}
               :house-details {:title "Caratteristiche principali"
-                              :toilets "bagno"}}})
+                              :toilets "bagno"
+                              :pax {:start "fino a n."
+                                    :end "ospiti"
+                                    :children-start "(più n."
+                                    :children-end "bambini piccoli)"}}}})
