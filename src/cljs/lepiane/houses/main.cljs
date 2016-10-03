@@ -3,6 +3,7 @@
 
             [lepiane.components.block :as b]
             [lepiane.components.desc :as d]
+            [lepiane.components.gallery :as g]
             [lepiane.data.houses :as h]
 
             [lepiane.data.lang :as lang]))
@@ -35,4 +36,10 @@
     [:div.col-xs-2
      [b/block @house]]
     [:div.col-xs-6
-     [d/description (:desc @house)]]]])
+     [d/description (:desc @house)]]]
+   [:div.row {:style {:margin-top "5em"}}
+    [spacer]
+    (let [skip (atom 0)]
+      [g/gallery [{:src (:pic @house)}
+                  {:src "/img/monolocale.png"}]
+       skip])]])
