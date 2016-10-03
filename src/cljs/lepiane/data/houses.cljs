@@ -6,32 +6,25 @@
     :pic "/img/padronale.png"
     :label [:sections :houses :main :label]
     :link "/houses/main"
-    :desc [:span
-           [:ul
-            [:li "3 camere"]
-            [:li "2 bagni"]
-            [:li "ampio salone"]
-            [:li "camino"]
-            [:li "6 posti letto"]]]}
+    :desc {:size 110
+           :toilets 2
+           :pax {:adults 6
+                 :children 2}}}
    {:id :monolocale
     :pic "/img/monolocale.png"
     :label [:sections :houses :single :label]
     :link "/houses/monolocale"
-    :desc [:span
-           [:ul
-            [:li "1 camera"]
-            [:li "1 bagno"]
-            [:li "cucina abitabile"]
-            [:li "2 ampie verande"]
-            [:li "2 posti letto (+ 1 bambino)"]]]}
+    :desc {:size 45
+           :toilets 1
+           :pax {:adults 2
+                 :children 1}}}
    {:id :bilocale
     :pic "/img/bilocale.png"
     :label [:sections :houses :double :label]
     :link "/houses/bilocale"
-    :desc {:size 45
+    :desc {:size 65
            :toilets 1
-           :pax {:adults 4
-                 :children 1}}}])
+           :pax {:adults 4}}}])
 
 (defn get-house
   [id]
