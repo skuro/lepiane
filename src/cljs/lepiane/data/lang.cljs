@@ -59,6 +59,10 @@
             :on-change event->language
             :style {:-moz-appearance "none"
                     :-webkit-appearance "none"
+                    :-moz-border-radius "5px"
+                    :-webkit-border-radius "5px"
+                    :border-radius "5px"
+                    :border "none"
                     :padding "0px 3px"}}
    (for [[label {:keys [id flag]}] langs]
      [:option {:id id
@@ -66,5 +70,6 @@
                :key (gensym)} flag " " label])])
 
 (defn string [path]
-  (let [strings (:strings @current)]
-    (get-in strings path)))
+  (when path
+    (let [strings (:strings @current)]
+      (get-in strings path))))
