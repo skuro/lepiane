@@ -4,6 +4,7 @@
   {:navbar {:home "Home"
             :where "Location"
             :contacts "Contact us"}
+   :links {:back "< back"}
    :title {:main "Holiday houses at Le Piane"
            :tagline "Sun and relax at Calasetta"}
    :sections {:houses {:title "Our houses"

@@ -28,7 +28,7 @@
     [:div.col-xs-2
      [:a {:href "/"
           :on-click (nav-clear-house)}
-      "< indietro"]]
+      (lang/string [:links :back])]]
     [:div.col-xs-10 " "]]
    [:div.row
     [spacer]

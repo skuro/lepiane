@@ -4,6 +4,7 @@
   {:navbar {:home "Home"
             :where "Dove siamo"
             :contacts "Contattaci"}
+   :links {:back "< indietro"}
    :title {:main "Case vacanze a Le Piane"
            :tagline "Mare e relax a Calasetta"}
    :sections {:houses {:title "Le nostre case"

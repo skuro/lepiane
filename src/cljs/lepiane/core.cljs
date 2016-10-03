@@ -8,6 +8,7 @@
               [lepiane.home :as home]
               [lepiane.contacts :as contacts]
               [lepiane.map :as map]
+              [lepiane.data.houses :as houses]
               [lepiane.houses.main :as hmain]
 
               ; utils
@@ -74,7 +75,8 @@
 (secretary/defroute "/map" []
   (session/put! :current-page #'map/map-page))
 
-(secretary/defroute "/houses/:house" []
+(secretary/defroute "/houses/:house" [house]
+  (hmain/set-house! (houses/get-house (keyword house)))
   (session/put! :current-page #'hmain/main-house-page))
 
 ;; -------------------------

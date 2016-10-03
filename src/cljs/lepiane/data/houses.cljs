@@ -2,7 +2,8 @@
   (:require [lepiane.data.lang :as lang]))
 
 (def house-data
-  [{:pic "/img/padronale.png"
+  [{:id :main
+    :pic "/img/padronale.png"
     :label [:sections :houses :main :label]
     :link "/houses/main"
     :desc [:span
@@ -13,9 +14,15 @@
             [:li "ampio salone"]
             [:li "camino"]
             [:li "6 posti letto"]]]}
-   {:pic "/img/monolocale.png"
+   {:id :monolocale
+    :pic "/img/monolocale.png"
     :label [:sections :houses :single :label]
     :link "/houses/monolocale"}
-   {:pic "/img/bilocale.png"
+   {:id :bilocale
+    :pic "/img/bilocale.png"
     :label [:sections :houses :double :label]
     :link "/houses/bilocale"}])
+
+(defn get-house
+  [id]
+  (first (filter #(= id (:id %)) house-data)))
