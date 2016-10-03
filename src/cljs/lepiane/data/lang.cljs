@@ -62,7 +62,7 @@
 
 (defn lang-switcher [selected-lang]
   [:select {:id "lang"
-            :defaultValue selected-lang
+            :value selected-lang
             :on-change event->language
             :style {:-moz-appearance "none"
                     :-webkit-appearance "none"
