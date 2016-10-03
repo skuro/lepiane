@@ -15,4 +15,5 @@
                          :pool {:label "Swimming pool"}
                          :transport {:label "Transport"}
                          :rentals {:label "Rentals"}}
-              :house-details {:title "Main features"}}})
+              :house-details {:title "Main features"
+                              :toilets "toilets"}}})

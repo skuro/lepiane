@@ -15,4 +15,5 @@
                          :pool {:label "Piscina"}
                          :transport {:label "Trasporto"}
                          :rentals {:label "Noleggio"}}
-              :house-details {:title "Caratteristiche principali"}}})
+              :house-details {:title "Caratteristiche principali"
+                              :toilets "bagno"}}})

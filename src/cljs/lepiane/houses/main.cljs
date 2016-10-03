@@ -7,7 +7,7 @@
 
             [lepiane.data.lang :as lang]))
 
-(def house (atom nil))
+(defonce house (atom nil))
 
 (defn set-house!
   [new-house]

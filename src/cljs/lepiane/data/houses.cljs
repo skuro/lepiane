@@ -28,13 +28,10 @@
     :pic "/img/bilocale.png"
     :label [:sections :houses :double :label]
     :link "/houses/bilocale"
-    :desc [:span
-           [:ul
-            [:li "2 camere"]
-            [:li "1 bagno"]
-            [:li "cucina abitabile"]
-            [:li "2 ampie verande con vista mare"]
-            [:li "4 posti letto (+ 1 bambino)"]]]}])
+    :desc {:size 45
+           :toilets 1
+           :pax {:adults 4
+                 :children 1}}}])
 
 (defn get-house
   [id]
