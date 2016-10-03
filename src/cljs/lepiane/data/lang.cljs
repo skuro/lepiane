@@ -22,6 +22,10 @@
   {:en en/strings
    :it it/strings})
 
+(defn translatable?
+  [lang]
+  ((set (keys strings)) (keyword lang)))
+
 (defn script->lang
   [script]
   (.log js/console "script is:" (.-text script))
@@ -43,9 +47,12 @@
 
 (defn switch-language
   [lang]
-  (when-let [l (langs lang :en)]
-    (reset! current (lang-map l))
-    @current))
+  (if (translatable? lang)
+    (let [l (langs lang :en)]
+      (reset! current (lang-map l))
+      @current)
+    (do
+      (js/alert "Language not yet supported, come back later!"))))
 
 (defn event->language [ev]
   (let [select-box (.. ev -target)
