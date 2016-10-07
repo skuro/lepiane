@@ -43,6 +43,6 @@
      [:div.row {:style {:margin-top "5em"}}
       [spacer]
       (let [skip (atom 0)]
-        [g/gallery [{:src (:pic @house)}
+        [g/gallery [{:src (:pic house)}
                     {:src "/img/monolocale.png"}]
-         skip])]]))
+         state/state])]]))
