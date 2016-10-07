@@ -1,5 +1,5 @@
 (ns lepiane.core
-    (:require [reagent.core :as reagent :refer [atom]]
+    (:require [reagent.core :as reagent]
               [reagent.session :as session]
               [secretary.core :as secretary :include-macros true]
               [accountant.core :as accountant]
@@ -12,7 +12,8 @@
               [lepiane.houses.main :as hmain]
 
               ; utils
-              [lepiane.data.lang :as lang]))
+              [lepiane.data.lang :as lang]
+              [lepiane.state :as state]))
 
 ;; -------------------------
 ;; Main page
@@ -23,7 +24,7 @@
                  :margin-bottom "-60px"
                  :z-index 100}
          :class "navbar"}
-   [lang/lang-switcher (name (or (:lang @lang/current)
+   [lang/lang-switcher (name (or (:lang (lang/get-language state/state))
                                  :en))]
    [:a {:href "/"} (lang/string [:navbar :home])]
    "|"
@@ -76,7 +77,7 @@
   (session/put! :current-page #'map/map-page))
 
 (secretary/defroute "/houses/:house" [house]
-  (hmain/set-house! (houses/get-house (keyword house)))
+  (hmain/set-house! state/state (houses/get-house (keyword house)))
   (session/put! :current-page #'hmain/main-house-page))
 
 ;; -------------------------
