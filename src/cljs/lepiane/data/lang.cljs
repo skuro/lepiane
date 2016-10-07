@@ -1,6 +1,5 @@
 (ns lepiane.data.lang
-  (:require [reagent.ratom :refer [atom]]
-
+  (:require [lepiane.state :as state]
             [lepiane.data.lang.en :as en]
             [lepiane.data.lang.it :as it]))
 
@@ -43,14 +42,22 @@
    :strings (or (strings id)
                 (strings :en))})
 
-(def current (atom (lang-map (detect-language))))
+(defn get-language
+  [state]
+  (get-in @state [::lang]))
+
+(defn set-language!
+  [state lang]
+  (swap! state assoc ::lang lang))
+
+(set-language! state/state (lang-map (detect-language)))
 
 (defn switch-language
   [lang]
   (if (translatable? lang)
     (let [l (langs lang :en)]
-      (reset! current (lang-map l))
-      @current)
+      (set-language! state/state (lang-map l))
+      (get-language state/state))
     (do
       (js/alert "Language not yet supported, come back later!"))))
 
@@ -78,5 +85,5 @@
 
 (defn string [path]
   (when path
-    (let [strings (:strings @current)]
+    (let [strings (:strings (get-language state/state))]
       (get-in strings path))))
