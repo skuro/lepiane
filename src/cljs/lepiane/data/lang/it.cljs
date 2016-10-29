@@ -20,4 +20,5 @@
                               :pax {:start "fino a n."
                                     :end "ospiti"
                                     :children-start "(più n."
-                                    :children-end "bambini piccoli)"}}}})
+                                    :children-end "bambini piccoli)"}}
+              :service-details {:title "Descrizione"}}})

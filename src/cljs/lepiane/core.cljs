@@ -9,7 +9,9 @@
               [lepiane.contacts :as contacts]
               [lepiane.map :as map]
               [lepiane.data.houses :as houses]
+              [lepiane.data.services :as services]
               [lepiane.houses.main :as hmain]
+              [lepiane.services :as service-page]
 
               ; utils
               [lepiane.data.lang :as lang]
@@ -79,6 +81,10 @@
 (secretary/defroute "/houses/:house" [house]
   (hmain/set-house! state/state (houses/get-house (keyword house)))
   (session/put! :current-page #'hmain/main-house-page))
+
+(secretary/defroute "/services/:service" [service]
+  (service-page/set-service! state/state (services/get-service (keyword service)))
+  (session/put! :current-page #'service-page/service-page))
 
 ;; -------------------------
 ;; Initialize app
