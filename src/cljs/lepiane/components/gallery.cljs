@@ -1,12 +1,16 @@
 (ns lepiane.components.gallery)
 
+(defn gallery-width
+  [pics]
+  (* (+ 139 50) (count pics)))
+
 (defn gallery
   [pics]
   [:div.col-xs-6 {:style {:height "100px"
                           :padding-left "0px"
                           :padding-right "0px"
                           :overflow "scroll"}}
-   [:div {:style {:width "200%"
+   [:div {:style {:width (str (gallery-width pics) "px")
                   :position "absolute"
                   :z-index "-1"
                   :overflow "scroll"
