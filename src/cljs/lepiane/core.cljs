@@ -41,14 +41,13 @@
                   :margin-top "25px"}}]
    [:div {:class "row"
           :style {:text-align "center"
-                  :margin-top "-25px"}}
+                  :margin-top "-15px"}}
     [:div {:class "col-lg-8 col-lg-offset-2"}
      [:h1 {:style {:font-family "Oswald, sans-serif"
                    :font-weight 300}}
       [:img {:src "/img/logo.png"
              :class "logo"
-             :style {:text-align "center"
-                     :margin-right "50px"}}]
+             :style {:text-align "center"}}]
       (lang/string [:title :main])]
      [:h3 {:style {:font-family "Oswald, sans-serif"
                    :font-weight 100
